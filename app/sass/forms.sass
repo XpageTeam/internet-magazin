@@ -1,0 +1,456 @@
+@import "vars"
+@import "functions"
+
+$base-color: $main-color
+$border-color: #d5dbdf
+$error-color: #ff0024
+
+.forms__input_error
+	
+	~ .forms__error-message
+		display: block
+
+.forms
+	display: none
+	max-width: 370px
+	box-sizing: border-box
+	padding: 40px 57px
+	background: #fff
+
+	.forms
+
+		&__input
+			border: 1px solid $border-color
+			min-height: 40px
+
+		&-input-cont
+			margin-bottom: 14px
+
+		&-wrap
+			margin-bottom: -14px
+
+	&__title
+		font-size: 20px
+		text-align: center
+		// font-weight: bold
+		font-weight: 400
+		margin-bottom: 20px
+		color: #000
+		// text-transform: uppercase
+		//border-bottom: 1px solid $border-color
+
+	&-text-cont
+		display: flex
+		justify-content: center
+
+	&__text
+		// margin: vh(25) 0
+		max-width: 540px
+		text-align: center
+		font-size: 14px
+		line-height: 20px
+
+	&-wrap
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+
+		&--bot
+			margin: 20px 0 14px !important
+			text-align: center
+			font-size: rem(13)
+			letter-spacing: .01em
+			line-height: lh(18, 13)
+			display: block
+			width: 100%
+
+			a
+				text-decoration: none
+				color: #b7b7b7
+
+			> div
+				width: 50%
+				box-sizing: border-box
+
+				&:nth-child(odd)
+					padding-right: 15px
+
+				&:nth-child(even)
+					padding-left: 15px
+
+	&-input-cont
+		display: flex
+		flex-direction: column-reverse
+		box-sizing: border-box
+		width: 47.2%
+		min-width: 10px
+		position: relative
+		margin-bottom: vh(50)
+
+		&--req
+			justify-content: space-between
+			align-items: flex-start
+
+		&:nth-child(odd)
+			//padding-right: vw(12)
+
+		&:nth-child(even)
+			//padding-left: vw(12)
+
+		&--file, &--textarea, &--full
+			width: 100%
+			padding: 0 !important
+
+		&--file
+			position: relative
+
+	&__input
+		width: 100%
+		height: 35px
+		border: 1px solid transparent
+		transition: border-color .3s ease
+		padding: 0 13px
+		outline: none
+		color: #000
+		font-size: rem(14)
+
+		&:focus
+			border-color: #3d3d3d
+
+		&_error
+			border-color: $error-color
+
+		&[required] + .forms__label:after
+			content: "*"
+			color: red
+
+		&--select
+			-webkit-appearance: none
+			appearance: none
+			background: url("../img/ico-select-arrow.png") center right 13px no-repeat, #fff
+			padding-right: 59px
+
+		&--file
+			display: none
+
+			&-support
+				width: calc(100% - 110px)
+				width: 100%
+
+		&--textarea
+			max-width: 100%
+			height: 142px
+			padding:
+				top: 5px
+				bottom: 5px
+			max-height: 180px
+
+	&__file-formats
+		order: -1
+		margin-top: vh(15)
+		font-size: rem(14)
+		color: #777777
+
+	&__label
+		margin: 0 0 12px
+
+		&--file
+			order: 1
+			pointer-events: none
+
+			&:before
+				content: attr(data-btn-text)
+				position: absolute
+				pointer-events: all
+				background: url("../img/ico-view.png") center left 15px no-repeat, #f4f4f4
+				right: 1px
+				bottom: 1px
+				cursor: pointer
+				width: 110px
+				height: 38px
+				text-align: right
+				line-height: 38px
+				box-sizing: border-box
+				padding-right: vw(16)
+
+	&-checkbox
+		position: relative
+
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 30px
+			height: 30px
+			border: 1px solid $border-color
+			border-radius: 1px
+
+	&__checkbox
+		display: none
+
+		&:checked + label
+
+			&:before, &:after
+				opacity: 1
+		
+		&-label
+			font-size: rem(16)
+			line-height: rem(20)
+			padding-left: 45px
+			display: block
+			cursor: pointer
+			min-height: 32px
+			display: flex
+			align-items: center
+
+			&:before, &:after
+				content: ""
+				position: absolute
+				background: $base-color
+				transition: opacity .5s ease
+				opacity: 0
+
+			&:before
+				width: 15px
+				height: 4px
+				top: 13px
+				left: 7px
+				transform-origin: left
+				transform: rotate(45deg)
+
+			&:after
+				width: 17px
+				height: 4px
+				top: 11px
+				left: 11px
+				transform-origin: right
+				transform: rotate(-45deg)
+
+	&__req-text
+		text-align: right
+
+		&:before
+			content: "* "
+			color: red
+			font-size: rem(14)
+
+	&-submit-cont
+		display: flex
+		justify-content: center
+		margin-top: 22px
+		width: 100%
+		text-align: center
+
+	&__submit
+		background: #000
+		color: #fff
+		border: none
+		font-weight: 300
+		font-size: rem(14)
+		letter-spacing: .01em
+		display: inline-block
+		text-decoration: none
+		padding: 11px 16px 12px
+		// border: 1px solid #000
+
+	&__error
+
+		&-message
+			border: 1px solid #d4d4d4
+			font-size: rem(13)
+			background: #fff
+			color: #000
+			padding: 7px 10px
+			border-radius: 7px
+			position: absolute
+			bottom: 45px
+			right: -6px
+			box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.1)
+			display: none
+
+			&:after
+				content: ""
+				background: url("../img/error-triangle.png") no-repeat
+				position: absolute
+				top: calc(100% - 0px)
+				right: 19px
+				width: 15px
+				height: 8px
+
+			&--file
+				bottom: initial
+				right: 21%
+				top: 0
+
+			&-icon
+				display: block
+				border-radius: 50%
+				position: absolute
+				border: 1px solid $error-color
+				width: 19px
+				height: 19px
+				background: #fff
+				bottom: -32px
+				right: 16px
+
+				&:after, &:before
+					content: ""
+					position: absolute
+					width: 1px
+					background: $error-color
+					left: calc(50% - 1px)
+
+				&:before
+					top: 4px
+					height: 8px
+
+				&:after
+					bottom: 4px
+					height: 2px
+
+.fancybox-type-image
+	//padding: 20px 60px
+	//background: #fff
+	// width: 300px !important
+	
+	.fancybox-inner
+		//padding: 20px 60px
+
+	.fancybox
+
+		&-image
+			// width: 300px !important
+			// max-width: none !important
+			// object-fit: contain
+
+.fancybox-skin
+	//position: static !important
+
+#resume-feedback
+	max-width: 650px
+
+@media screen and (max-width: 1000px)
+	.fancy-active
+		overflow: hidden !important
+
+		#page-wr
+			display: none
+
+	.forms
+
+		&-wrap
+
+			&--bot
+
+				br
+					display: none
+
+@media screen and (max-width: 660px)
+
+	.fancy-active
+
+		.fancybox
+
+			&-overlay
+
+			&-wrap
+				top: 0 !important
+				left: 0 !important
+				width: 100% !important
+				height: 100vh !important
+
+			&-inner
+				width: 100% !important
+				min-height: 100% !important
+				overflow-y: scroll !important
+
+			&-skin, &-outer
+				height: 100% !important
+
+			&-type-image
+
+				.fancybox-inner
+					display: flex !important
+					justify-content: center
+	
+	.forms
+		padding: 18px
+		min-height: 100%
+
+	.fancybox
+
+		&-close
+			left: initial
+			right: 0
+
+		&-overlay
+
+			&-fixed
+				// bottom: auto !important
+				// right: auto !important
+				// width: 100vw !important
+				// height: 100vh !important
+
+		&-wrap
+			// width: 100vw !important
+			// height: 100vh !important
+			// top: 0 !important
+			// left: 0 !important
+			// right: auto !important
+			// bottom: auto !important
+			// overflow: hidden !important
+
+		&-inner
+			// padding: 20px 0
+
+		&-skin
+			// width: 100% !important
+			// height: 100% !important
+
+			div
+				// width: 100% !important
+				// height: 100% !important
+
+			.fancybox-image
+				// width: 100% !important
+				// //margin: 20px 0
+				// height: calc(100% - 40px) !important
+
+	.forms
+		margin: 0 !important
+
+		&-input-cont
+			width: 100%
+
+		&__label
+
+			&--file
+
+				&:before
+					// background-image: none
+					text-align: center
+					padding-right: 0
+					text-indent: -9999px
+					overflow: hidden
+					background-position: center
+					width: 40px
+
+		&-wrap
+
+			&--bot
+
+				> div
+					width: 100%
+
+					&:not(:first-child)
+						margin-top: vh(15)
+
+
+		&-checkbox
+
+		&__checkbox
+			width: 100%
+
+		&__req-text
+			text-align: center

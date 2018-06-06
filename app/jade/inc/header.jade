@@ -1,0 +1,19 @@
+header.head
+	.wrapper
+		.head__wrap
+			.head__logo
+				a.logo(href="#")
+					img(src="img/logo.png")
+			nav.head__menu
+				ul.menu
+					li.menu__el
+						a.menu__link.active(href="#") Новинки
+					each title in ["Бренды", " Мужское", "Женское", "Детское", "Аксессуары", "Скидки", ]
+						li.menu__el
+							a.menu__link(href="#")=title
+			.head__search
+				a.head-search(href="#")
+			.head__cart
+				a.head-cart(href="#" data-count="1")
+			.head__lc
+				a.head-lc(href="#")

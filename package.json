@@ -1,0 +1,53 @@
+{
+  "name": "internet-magazine",
+  "version": "0.0.1",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.24.4",
+    "cssnano": "^3.10.0",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-base64": "^0.1.3",
+    "gulp-cache": "^1.0.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemap": "^1.0.1",
+    "gulp-util": "^3.0.8",
+    "imagemin": "^5.3.1",
+    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-pngquant": "^5.1.0",
+    "postcss-assets": "^5.0.0",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-data-packer": "^1.2.3",
+    "postcss-flexbugs-fixes": "^3.3.1",
+    "postcss-px2rem": "^0.3.0",
+    "postcss-sass": "^0.3.2",
+    "postcss-scss": "^1.0.5",
+    "postcss-short": "^4.1.0",
+    "vinyl-ftp": "^0.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XpageTeam/internet-magazin.git"
+  },
+  "author": "danil.khandys",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XpageTeam/internet-magazin/issues"
+  },
+  "homepage": "https://github.com/XpageTeam/internet-magazin#readme",
+  "description": ""
+}

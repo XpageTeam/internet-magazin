@@ -1,0 +1,427 @@
+$output-bourbon-deprecation-warnings: false;
+@import "vars"
+@import "functions"
+// @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=cyrillic')
+
+*::-webkit-input-placeholder
+	color: #000
+	opacity: .55
+
+*:-moz-placeholder
+	color: #000
+	opacity: .55
+
+*::-moz-placeholder
+	color: #000
+	opacity: .55
+
+*:-ms-input-placeholder
+	color: #000
+	opacity: .55
+
+html
+	font-size: 100%
+
+input, a, button, textarea, select
+	outline: none
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select, input[type="submit"], button
+	appearance: none
+
+*, *:after, *:before
+	box-sizing: border-box
+
+*[v-cloak]
+	display: none
+
+
+%clear-text
+	overflow: hidden
+	text-indent: -9999px
+
+%clearfix
+	
+	&:after
+		display: table
+		clear: both
+		content: ""
+
+address
+	font-weight: inherit
+
+body
+	min-width: 320px
+	line-height: 1.2
+	font-family: $default-font
+	font-weight: 300
+	font-size: 16px
+	background: #fff
+	color: #000
+	position: relative
+
+#content
+	flex: 1 0 auto
+	display: flex
+	flex-direction: column
+
+.head, .footer
+	flex: none
+
+#page-wr
+	margin: 0 auto
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+	select
+		-webkit-appearance: none;
+		/* for FF */
+		-moz-appearance: none;
+		text-indent: 0.01px; 
+		text-overflow: '';
+		/* for IE */
+		-ms-appearance: none;
+		appearance: none!important;
+
+		&::-ms-expand 
+			display: none;
+
+a
+	color: $main-color
+	font-weight: inherit
+	text-decoration: none
+
+	&[href^="tel"], &[href^="mail"]
+		white-space: nowrap
+
+	&:not([class])
+		border-bottom: 1px solid transparent
+
+		&:hover, &:focus
+			color: $main-color
+			border-color: $main-color
+
+.wrapper
+	max-width: $base-width + px
+	padding: 0 2rem
+	margin: 0 auto
+	box-sizing: content-box
+
+input[type="submit"], button
+	cursor: pointer
+
+img, svg
+	max-width: 100%
+
+li
+	list-style: none
+
+.soc
+	
+	&__link
+		display: inline-block
+		border-radius: 50%
+		border: 1px solid #e0e0e0
+		width: 44px
+		height: 44px
+		background: 
+			position: center
+			repeat: no-repeat
+			color: #fff
+		transition: border-color .3s ease
+
+		&:hover, &:focus
+			border-color: $main-color
+
+		&:not(:last-child)
+			margin-right: 9px
+
+.soc-list
+	display: flex
+	
+	&__one
+
+		a
+			color: #000
+			text-decoration: none
+			font-weight: 400
+			font-size: 14px
+
+		&:not(:last-child)
+			margin-right: vw(48)
+
+.table-wrap
+	overflow: auto
+
+.standart-page
+
+	&__title
+		margin-bottom: rem(36)
+
+		h1
+			text-transform: uppercase
+			font-weight: bold
+			font-size: rem(24)
+			line-height: lh(28, 24)
+
+	&__img
+
+		img
+			display: block
+
+	&__text
+		margin: rem(55) 0 0
+		max-width: 1075px
+		font-size: 14px
+		line-height: lh(22, 14)
+
+%text-page, .text-page
+
+	> *:not(:first-child)
+		// margin-top: 20px
+
+	p, img, blockquote, ul, ol
+		margin: rem(22) 0 0
+
+	strong
+		font-weight: bold
+
+	h2, h3, h4, h5, h6
+		font-weight: bold
+		text-transform: uppercase
+		margin: rem(40) 0 0
+
+	h2
+		font-size: rem(22)
+		line-height: rem(28)
+
+	h3
+		font-size: rem(20)
+		line-height: rem(26)
+
+	h4
+		font-size: rem(18)
+		line-height: rem(24)
+
+	h5, h6
+		font-size: rem(16)
+		line-height: rem(24)
+
+	img[align="right"]
+		float: right
+		margin-left: 20px
+
+	img[align="left"]
+		float: left
+		margin-right: 20px
+
+	blockquote
+		border-left: 2px solid $main-color
+		padding-left: 21px
+
+		&.bg
+			border: none
+			padding: 22px 30px
+			background: #fff
+			color: #b6b6b6
+
+		&.border
+			font-weight: 400
+			font-size: rem(22)
+			line-height: lh(26, 22)
+			padding: 25px 0
+			border:
+				top: 1px solid $border-color
+				bottom: 1px solid $border-color
+				left: none
+
+	table
+		// width: 100%
+		// table-layout: fixed
+		color: #000
+
+		td, th
+			padding: 15px 23px
+			font-weight: 300
+			vertical-align: middle
+
+	table[border="1"]
+
+		td, th
+			border: 1px solid $border-color
+
+	ul, ol
+		// list-style: none
+		max-width: 990px
+
+		ul
+
+			li
+				// padding-left: 20px
+
+				&:before
+					content: "-"
+
+	li
+		//padding-left: 20px
+		position: relative
+		line-height: 1.3
+
+		&:before
+			display: inline-block
+
+		ul, ol
+			margin-bottom: 20px
+			margin-top: 0
+
+		li
+			padding-left: 20px
+
+			&:not(:first-child)
+				margin-top: 0
+
+	ul
+
+		li
+			// padding-left: 8px
+
+			// &:not(:first-child)
+			// 	margin-top: 14px
+
+			&:before
+				content: "—"
+				// margin: 0 4px 0 -8px
+				margin: 0 4px 0 0
+	
+	ol
+		counter-reset: i
+
+		li
+			counter-increment: i
+
+			&:before
+				content: counter(i) "."
+				margin-right: 4px
+
+.radio
+	position: relative
+
+	&:hover, .radio__input:focus +
+
+		.radio
+
+			&__label
+				color: $main-color
+
+				&:before
+					border-color: $main-color
+	
+	&__input
+		position: absolute
+		top: 0
+		left: 0
+		opacity: 0
+		width: 0
+		height: 0
+
+		&:checked
+
+			+ label
+
+				&:after
+					opacity: 1
+
+	&__label
+		position: relative
+		min-height: 26px
+		display: flex
+		align-items: center
+		cursor: pointer
+		padding-left: 40px
+		user-select: none
+		transition: color .3s ease
+
+		&:before, &:after
+			content: ""
+			position: absolute
+			border-radius: 50%
+
+		&:before
+			top: 0
+			left: 0
+			background: $second-color
+			width: 26px
+			height: 26px
+			transition: border-color .3s ease
+		
+		&:after
+			top: 9px
+			left: 9px
+			width: 8px
+			height: 8px
+			transition: opacity .3s ease
+			opacity: 0
+			z-index: 1
+			background: $main-color
+
+.checkbox
+	position: relative
+
+	&:hover, .checkbox__input:focus +
+
+		.checkbox
+
+			&__label
+				color: $main-color
+
+				&:before
+					border-color: $main-color
+	
+	&__input
+		position: absolute
+		top: 0
+		left: 0
+		opacity: 0
+		width: 0
+		height: 0
+
+		&:checked
+
+			+ label
+				
+				&:after
+					opacity: 1
+
+	&__label
+		position: relative
+		padding-left: 32px
+		cursor: pointer
+		min-height: 18px
+		display: flex
+		align-items: center
+		transition: color .3s ease
+
+		&:before, &:after
+			position: absolute
+			content: ""
+
+		&:before
+			background: #fff
+			width: 18px
+			height: 18px
+			left: 0
+			top: 2px
+			top: 0
+			border: 1px solid $border-color
+			transition: border-color .3s ease
+
+		&:after
+			transition: opacity .3s ease
+			width: 11px
+			height: 6px
+			left: 4px
+			top: 8px
+			top: 6px
+			background: url("../img/ico-check.png") no-repeat
+			opacity: 0

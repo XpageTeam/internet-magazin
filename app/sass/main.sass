@@ -1,0 +1,102 @@
+@import "vars"
+@import "base"
+@import "functions"
+
+*[v-cloak]
+	display: none
+
+button, input, select
+	font-family: inherit
+
+.rub
+	font-style: normal
+	font-size: inherit
+	font-weight: inherit
+	font-family: "Roboto"
+
+.head
+	box-shadow: 0 0 18px 0 #00000019
+	padding: 17px 0	
+
+	&__wrap
+		display: flex
+		align-items: center
+
+	&__logo
+		flex: none
+		margin-right: 88px
+
+	&__menu
+		padding-right: 32px
+		margin-right: auto
+
+.menu
+	display: flex
+
+	&__link
+		color: #000
+		position: relative
+
+		&.active, &:hover, &:focus
+
+			&:after
+				transform: scale3d(1, 1, 1)
+
+		&:after
+			content: ""
+			position: absolute
+			left: 0
+			pointer-events: none
+			top: calc(100% + 30px)
+			size: 100% 2px
+			background: $main-color
+			transition: transform .3s ease
+			transform: scale3d(0, 1, 1)
+			transform-origin: left
+
+	&__el
+
+		&:not(:last-child)
+			margin-right: vw(25)
+
+.head-search
+	background: url("../img/ico-search.png") no-repeat
+	size: width("../img/ico-search.png") height("../img/ico-search.png")
+
+.head-cart
+	background: url("../img/ico-cart.png") no-repeat
+	size: width("../img/ico-cart.png") height("../img/ico-cart.png")
+
+	&[data-count]
+		position: relative
+
+		&:after
+			border-radius: 50%
+			content: attr(data-count)
+			position: absolute
+			size: 17px
+			// text-align: center
+			display: flex
+			justify-content: center
+			align-items: center
+			font-size: 9px
+			background: $main-color
+			color: #fff
+			top: -3px
+			left: 14px
+
+.head-lc
+	background: url("../img/ico-lc.png") no-repeat
+	size: width("../img/ico-lc.png") height("../img/ico-lc.png")
+
+.head
+
+	&-search, &-cart, &-lc
+		display: inline-block
+
+	&__search, &__cart, &__lc
+
+		&:not(:last-child)
+			margin-right: 25px
+
+@import "media"

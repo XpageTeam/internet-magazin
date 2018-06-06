@@ -1,0 +1,13 @@
+@import "vars"
+
+@function persent($px, $base: $base-width)
+	@return $px/$base*100 + %
+
+@function vh($px, $base: 961)
+	@return $px/$base*100 + vh
+
+@function vw($px, $base: 1903)
+	@return $px/$base*100 + vw
+
+@function lh($lh, $px)
+	@return $lh/$px
