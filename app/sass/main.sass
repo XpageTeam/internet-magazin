@@ -63,6 +63,10 @@ button, input, select
 	background: url("../img/ico-search.png") no-repeat
 	size: width("../img/ico-search.png") height("../img/ico-search.png")
 
+.head-lc
+	background: url("../img/ico-lc.png") no-repeat
+	size: width("../img/ico-lc.png") height("../img/ico-lc.png")
+
 .head-cart
 	background: url("../img/ico-cart.png") no-repeat
 	size: width("../img/ico-cart.png") height("../img/ico-cart.png")
@@ -85,10 +89,6 @@ button, input, select
 			top: -3px
 			left: 14px
 
-.head-lc
-	background: url("../img/ico-lc.png") no-repeat
-	size: width("../img/ico-lc.png") height("../img/ico-lc.png")
-
 .head
 
 	&-search, &-cart, &-lc
@@ -99,4 +99,227 @@ button, input, select
 		&:not(:last-child)
 			margin-right: 25px
 
+.top-banners
+
+	&__cont
+		padding: 30px 0
+		background: $second-color
+
+	&--slider
+
+		&:not(.top-banners--variable)
+			margin: 0 -16px
+
+			.slick
+
+				&-arrow
+
+				&-prev
+					left: -4px
+
+				&-next
+					right: -4px
+
+		&:not(.slick-slider)
+			display: flex
+
+		.slick
+
+			&-arrow
+				position: absolute
+				top: calc(50% - 20px)
+				border-radius: 50%
+				border: none
+				display: block
+				size: 40px
+				transition: background .3s ease
+				background: #fff
+				z-index: 2
+
+				&:hover, &:focus
+					background: $main-color
+
+					&:before
+						border-color: #fff
+
+				&:before
+					position: absolute
+					content: ""
+					size: 8px
+					border:
+						left: 2px solid #cacacc
+						bottom: 2px solid #cacacc
+					transform: rotate(45deg)
+					top: calc(50% - 4px)
+					left: calc(50% - 2px)
+					transition: border-color .3s ease
+
+			&-prev
+				left: -20px
+
+			&-next
+				right: -20px
+				transform: rotate(180deg)
+
+	&__slide
+		margin: 0 16px
+
+		&:not(.slick-slide):nth-child(n + 4)
+			display: none
+
+.top-slide
+	position: relative
+	display: block
+
+	&__img
+		display: block
+
+	&:after, &__desc
+		position: absolute
+		left: 0
+		bottom: 0
+
+	&:after
+		content: ""
+		size: 100%
+		background: rgba(#000, .2)
+		transition: background .3s ease
+
+	&:hover, &:focus
+
+		&:after
+			background: transparent
+
+	&__desc
+		z-index: 2
+		color: #fff
+		font-weight: 400
+		padding: 0 0 35px 35px
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+
+	&__label
+		font-size: 14px
+		line-height: 1
+		padding: 7px 15px 9px
+		border-radius: 2px
+
+		&:not(:last-child)
+			margin-bottom: 11px
+
+		&--sale
+			background: $sale-label-color
+
+		&--new
+			background: $new-label-color
+
+		&--actual
+			background: $actual-label-color
+
+	&__title
+		font-size: 20px
+		line-height: 1
+
+.main-catalog
+
+	&__cont
+		padding: 2rem 0
+	
+	&__title
+		font-weight: 400
+		line-height: 1
+		font-size: 20px
+
+		&-cont
+			display: flex
+			justify-content: space-between
+			align-items: center
+			margin-bottom: 30px
+
+.main-cat
+	display: flex
+	flex-wrap: wrap
+	margin: 0 0 -32px -32px
+
+	&__one
+		margin: 0 0 32px 32px
+		width: calc((100% - 32px * 4) / 4)
+		display: flex
+		flex-direction: column
+		position: relative
+
+.cat-item
+	margin: -9px
+	flex: 1 1 auto
+	border: 9px solid transparent
+	outline: 1px solid transparent
+	transition: border-color .3s ease, outline-color .3s ease
+	position: relative
+	display: flex
+	flex-direction: column
+
+	&:hover, &:focus
+		border-color: #fff	
+		outline-color: $border-color
+
+		.cat-item
+
+			&__links, &__btns
+				opacity: 1
+				pointer-events: all
+
+	&__img
+		flex: none
+		margin-bottom: 23px
+		
+		img
+			display: block
+
+	&__desc
+		flex: 1 1 auto
+		display: flex
+		flex-direction: column
+
+	&__title
+		flex: 1 1 auto
+		font-size: 14px
+		font-weight: 400
+		line-height: lh(22, 14)
+		margin-bottom: 16px
+
+		a
+			color: #000
+			border-bottom: 1px solid $main-color
+
+	&__links, &__btns
+		position: absolute
+		left: -10px
+		right: -10px
+		transition: opacity .3s ease
+		opacity: 0
+		pointer-events: none
+
+	&__btns
+		top: calc(100% + 9px)
+		background: #fff
+		z-index: 10
+		padding: 10px 9px 12px
+		border: 1px solid $border-color
+		border-top: none
+		display: flex
+
+		&-second, &-primary
+			flex: 1 1 auto
+
+			&:not(:last-child)
+				margin-right: 14px
+
+			a
+				display: block
+
+.cat-price
+	white-space: nowrap
+
+@import "grid"
 @import "media"

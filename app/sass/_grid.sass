@@ -2,4 +2,13 @@
 @import "functions"
 
 @supports (display: grid)
-	/**/
+	.main-cat
+		margin: 0 !important
+		// width: auto !important
+		grid-gap: 32px
+		display: grid !important
+		grid-template-columns: repeat(4, 1fr)
+
+		&__one
+			width: auto !important
+			margin: 0 !important

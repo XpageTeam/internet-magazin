@@ -425,3 +425,31 @@ li
 			top: 6px
 			background: url("../img/ico-check.png") no-repeat
 			opacity: 0
+
+%btn
+	display: inline-block
+	text-align: center
+	border-radius: 2px
+	font-weight: 400
+	font-size: 14px
+	line-height: 1
+	padding: 9px 19px 10px
+	transition: background .3s ease, color .3s ease
+
+.default-btn
+	@extend %btn
+	color: #fff
+	background: $main-color
+
+	&:hover, &:focus
+		background: lighten($main-color, 10%)
+
+.second-btn
+	@extend %btn
+	border: 1px solid $border-color
+	margin: -1px
+	color: #000
+
+	&:hover, &:focus
+		background: $main-color
+		color: #fff

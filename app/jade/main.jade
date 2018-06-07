@@ -10,6 +10,49 @@ html(lang="ru")
 		#page-wr
 			include inc/header.jade
 			main#content
-				
+				.top-banners__cont
+					.wrapper
+						<!-- класс top-banners--slider означает что это будет слайдер -->
+						<!-- класс top-banners--variable означает что у слайдов будет разная ширина -->
+						.top-banners.top-banners--slider.top-banners--variable
+							- for (let i = 0; i < 2; i++)
+								each slide, i in [{label: "Скидки", title: "На все 50%"}, {label: "Новые поступления", title: "Мужские кросовки"}, {label: "Актуальные категории", title: "Рюкзаки и сумки"}, ]
+									.top-banners__slide
+										a.top-slide(href="#")
+											img.top-slide__img(src="img/photos/top-slide-img-"+(i+1)+".jpg", alt=slide.title)
+											.top-slide__desc
+												if (slide.label == "Скидки")
+													.top-slide__label.top-slide__label--sale=slide.label
+												else if (slide.label == "Новые поступления")
+													.top-slide__label.top-slide__label--new=slide.label
+												else
+													.top-slide__label.top-slide__label--actual=slide.label
+												.top-slide__title=slide.title
+				.main-catalog__cont
+					.wrapper
+						.main-catalog
+							.main-catalog__title-cont
+								.main-catalog__title Популярные товары
+								.main-catalog__btn
+									a.default-btn(href="#") Перейти
+							.main-catalog__list
+								.main-cat
+									- for (let i = 0; i < 2; i++)
+										each item, i in [{title: "Куртка утепленная SHORT PADDED JACKET", price: "3 999"}, {title: "ELLA BUCKLE TRIM BALLERINA", price: "1 799"}, {title: "Куртка утепленная SHORT PADDED JACKET", price: "3 999"}, {title: "Балетки ELLA BUCKLE TRIM BALLERINA", price: "1 799"}, ]
+											.main-cat__one
+												.cat-item
+													a.cat-item__img(href="#")
+														img(src="img/photos/cat-item-"+i+".jpg", alt=item.title)
+													.cat-item__links
+													.cat-item__desc
+														.cat-item__title
+															a(href="#")=item.title
+														.cat-item__price
+															.cat-price=item.price+" руб"
+													.cat-item__btns
+														.cat-item__btns-primary
+															a.default-btn(href="#") Перейти
+														.cat-item__btns-second
+															a.second-btn.fancybox(href="#") Заказать в один клик
 			include inc/footer.jade
 		include inc/scripts.jade
