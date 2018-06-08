@@ -291,6 +291,7 @@ button, input, select
 		a
 			color: #000
 			border-bottom: 1px solid $main-color
+			font: inherit
 
 	&__links, &__btns
 		position: absolute
@@ -299,6 +300,13 @@ button, input, select
 		transition: opacity .3s ease
 		opacity: 0
 		pointer-events: none
+
+	&__links
+		padding: 25px 24px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		top: -11px
 
 	&__btns
 		top: calc(100% + 9px)
@@ -317,6 +325,53 @@ button, input, select
 
 			a
 				display: block
+
+.compare, .favorite
+
+	&-link
+		border-radius: 50%
+		display: block
+		background: #fff
+		size: 33px
+		position: relative
+
+		&:after, &:before
+			content: ""
+			position: absolute
+			transition: opacity .3s ease
+
+		&:after
+			opacity: 0
+
+		&.added, &:active
+
+			&:before
+				opacity: 0
+
+			&:after
+				opacity: 1
+
+.compare-link
+	
+	&:before, &:after
+		background: url("../img/ico-compare.svg") no-repeat
+		background-size: contain !important
+		size: 12px
+		left: calc(50% - 5px)
+		top: calc(50% - 7px)
+
+.favorite-link
+
+	&:before, &:after
+		size: 17px 14px
+		top: calc(50% - 7px)
+		left: calc(50% - 8px)
+
+	&:before
+		background: url("../img/ico-favorite.png") no-repeat
+
+	&:after
+		background: url("../img/ico-favorite-added.png") no-repeat
 
 .cat-price
 	white-space: nowrap

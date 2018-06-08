@@ -37,22 +37,42 @@ html(lang="ru")
 									a.default-btn(href="#") Перейти
 							.main-catalog__list
 								.main-cat
-									- for (let i = 0; i < 2; i++)
-										each item, i in [{title: "Куртка утепленная SHORT PADDED JACKET", price: "3 999"}, {title: "ELLA BUCKLE TRIM BALLERINA", price: "1 799"}, {title: "Куртка утепленная SHORT PADDED JACKET", price: "3 999"}, {title: "Балетки ELLA BUCKLE TRIM BALLERINA", price: "1 799"}, ]
-											.main-cat__one
-												.cat-item
-													a.cat-item__img(href="#")
-														img(src="img/photos/cat-item-"+i+".jpg", alt=item.title)
-													.cat-item__links
-													.cat-item__desc
-														.cat-item__title
-															a(href="#")=item.title
-														.cat-item__price
-															.cat-price=item.price+" руб"
-													.cat-item__btns
-														.cat-item__btns-primary
-															a.default-btn(href="#") Перейти
-														.cat-item__btns-second
-															a.second-btn.fancybox(href="#") Заказать в один клик
+									each item, i in [{title: "Куртка утепленная SHORT PADDED JACKET", price: "3 999"}, {title: "ELLA BUCKLE TRIM BALLERINA", price: "1 799"}, {title: "Куртка утепленная SHORT PADDED JACKET", price: "3 999"}, {title: "Балетки ELLA BUCKLE TRIM BALLERINA", price: "1 799"}, ]
+										.main-cat__one
+											.cat-item
+												a.cat-item__img(href="#")
+													img(src="img/photos/cat-item-"+i+".jpg", alt=item.title)
+												.cat-item__links
+													.cat-item__links-left
+														a.compare-link(href="#" title="Добавить к сравнению")
+													.cat-item__links-right
+														a.favorite-link(href="#" title="В избранное")
+												.cat-item__desc
+													.cat-item__title
+														a(href="#")=item.title
+													.cat-item__price
+														.cat-price=item.price+" руб"
+												.cat-item__btns
+													.cat-item__btns-primary
+														a.default-btn(href="#") Перейти
+													.cat-item__btns-second
+														a.second-btn.fancybox(href="#") Заказать в один клик
+				.news-block__cont
+					.wrapper
+						.news-block
+							.news-block__big
+								a.news-big-item(href="#")
+									img.news-big-item__img(src="", alt="Nike Air Max 98 & Air Zoom Spiridon: нулевой меридиан")
+									.news-big-item__label журнал 
+									.news-big-item__title Nike Air Max 98 & Air Zoom Spiridon: нулевой меридиан
+							.news-block__list
+								- for (let i = 0; i <= 2; i++)
+									.news-block__one
+										a.news-item(href="#")
+											.news-item__date 20.08
+											.news-item__text
+												p Рассказываем, как бренд вдохновлялся гринвичским временем для новых расцветок Air Max 98 и Air Zoom Spiridon
+											.news-item__btn
+												.news-item-fake-btn
 			include inc/footer.jade
 		include inc/scripts.jade

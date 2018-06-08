@@ -434,22 +434,20 @@ li
 	font-size: 14px
 	line-height: 1
 	padding: 9px 19px 10px
-	transition: background .3s ease, color .3s ease
 
 .default-btn
 	@extend %btn
 	color: #fff
 	background: $main-color
+	transition: background .3s ease
 
-	&:hover, &:focus
-		background: lighten($main-color, 10%)
+	&:not(:active)
+	
+		&:hover, &:focus
+			background: #6003de
 
 .second-btn
 	@extend %btn
 	border: 1px solid $border-color
 	margin: -1px
 	color: #000
-
-	&:hover, &:focus
-		background: $main-color
-		color: #fff
