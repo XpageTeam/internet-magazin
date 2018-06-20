@@ -1,5 +1,28 @@
 footer.footer
 	.wrapper
 		.footer__top
-			.footer__col 
+			each col, i in [{title: "Компания", menu: ["О компании", "Новости", "Сотрудники", "Вакансии", "Магазины", "Политика", ]}, {title: "Информация", menu: ["Помощь", "Условия оплаты", "Условия доставки", "Гарантия на товар", "Возможности",]}, {title: "Помощь", menu: ["Блог", "Вопрос-ответ", "Бренды", "Обзоры"]}]
+				.footer__col
+					.footer__col-title=col.title
+					nav.footer-menu
+						ul.footer-menu__list
+							each title, j in col.menu
+								if (i==0 && j==0)
+									li
+										a.footer-menu__link.active(href="#")=title
+								else
+									li
+										a.footer-menu__link(href="#")=title
+			.footer__col.footer__col--soc
+				.footer__col-title Оставайтесь на связи
+			.footer__col.footer__col--contacts
+				.footer__col-title Наши контакты
 		.footer__bot
+			.footer__copy
+				.copy
+					span 2018 © Xpage: Name Company – универсальный интернет-магазин
+			.footer__feddback
+				.feedback
+					.feedback__title Мы всегда на связи
+					.feedback__btn
+						a.default-btn.fancybox(href="#") Связаться с нами

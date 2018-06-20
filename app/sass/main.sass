@@ -16,7 +16,7 @@ button, input, select
 
 .head
 	box-shadow: 0 0 18px 0 #00000019
-	padding: 17px 0	
+	padding: 17px 0	11px
 
 	&__wrap
 		display: flex
@@ -36,6 +36,8 @@ button, input, select
 	&__link
 		color: #000
 		position: relative
+		font-size: 15px
+		letter-spacing: .03em
 
 		&.active, &:hover, &:focus
 
@@ -47,7 +49,7 @@ button, input, select
 			position: absolute
 			left: 0
 			pointer-events: none
-			top: calc(100% + 30px)
+			top: calc(100% + 28px)
 			size: 100% 2px
 			background: $main-color
 			transition: transform .3s ease
@@ -55,9 +57,10 @@ button, input, select
 			transform-origin: left
 
 	&__el
+		padding-bottom: 9px
 
 		&:not(:last-child)
-			margin-right: vw(25)
+			margin-right: vw(28.7)
 
 .head-search
 	background: url("../img/ico-search.png") no-repeat
@@ -102,7 +105,7 @@ button, input, select
 .top-banners
 
 	&__cont
-		padding: 30px 0
+		padding: 30px 0 35px
 		background: $second-color
 
 	&--slider
@@ -204,6 +207,7 @@ button, input, select
 		line-height: 1
 		padding: 7px 15px 9px
 		border-radius: 2px
+		letter-spacing: 0.05em
 
 		&:not(:last-child)
 			margin-bottom: 11px
@@ -220,16 +224,18 @@ button, input, select
 	&__title
 		font-size: 20px
 		line-height: 1
+		letter-spacing: 0.08em
 
 .main-catalog
 
 	&__cont
-		padding: 2rem 0
+		padding: 30px 0 32px
 	
 	&__title
 		font-weight: 400
 		line-height: 1
 		font-size: 20px
+		letter-spacing: .055em
 
 		&-cont
 			display: flex
@@ -286,7 +292,8 @@ button, input, select
 		font-size: 14px
 		font-weight: 400
 		line-height: lh(22, 14)
-		margin-bottom: 16px
+		margin-bottom: 17px
+		letter-spacing: .045em
 
 		a
 			color: #000
@@ -302,7 +309,7 @@ button, input, select
 		pointer-events: none
 
 	&__links
-		padding: 25px 24px
+		padding: 28px 27px 28px 25px
 		display: flex
 		justify-content: space-between
 		align-items: center
@@ -312,7 +319,7 @@ button, input, select
 		top: calc(100% + 9px)
 		background: #fff
 		z-index: 10
-		padding: 10px 9px 12px
+		padding: 11px 9px 7px
 		border: 1px solid $border-color
 		border-top: none
 		display: flex
@@ -375,12 +382,15 @@ button, input, select
 
 .cat-price
 	white-space: nowrap
+	font-weight: bold
+	line-height: lh(24, 16)
+	letter-spacing: .06em
 
 .news-block
 	display: flex
 
 	&__cont
-		padding: 45px 0 0
+		padding: 75px 0 0
 	
 	&__big
 		flex: none
@@ -417,9 +427,11 @@ button, input, select
 		// opacity: .5
 		color: rgba(#000, .5)
 		margin-bottom: 25px
+		letter-spacing: .1em
 
 	&__text
 		line-height: 1.57
+		letter-spacing: .055em
 
 	&:hover, &:focus
 
@@ -470,8 +482,9 @@ button, input, select
 		background: #000
 		border-radius: 2px
 		line-height: 1
+		letter-spacing: .08em
 		font-size: 14px
-		padding: 7px 12px 8px
+		padding: 7px 15px 8px
 		left: 40px
 		top: 35px
 
@@ -488,7 +501,46 @@ button, input, select
 			max-width: 300px
 			display: block
 
+.footer
+	margin: 86px 0 0
+	background: #f3f3f3
 
+	&__top
+		padding: 56px 0 45px
+		display: flex
+		justify-content: space-between
+
+	&__bot
+		border-top: 1px solid #dddddd
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding: 31px 0 28px
+
+	&__col
+
+		&-title
+			font-weight: bold
+			font-size: 14px
+			line-height: lh(22, 14)
+			margin-bottom: 17px
+
+.feedback
+	display: flex
+	align-items: center
+	font-weight: 400
+
+	&__title, &__btn
+		flex: none
+
+	&__title
+		font-size: 13px
+		margin-right: 45px
+
+.copy
+	font-weight: 400
+	font-size: 12px
+	color: rgba(#000, .5)
 
 @import "grid"
 @import "media"
