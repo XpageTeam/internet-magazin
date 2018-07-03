@@ -493,8 +493,9 @@ button, input, select
 		left: 0
 		right: 0
 		font-size: 20px
+		letter-spacing: .05em
 		line-height: 1.2
-		padding: 80px 36px 30px
+		padding: 80px 39px 35px
 		background: linear-gradient(to bottom, transparent 10%, rgba(#000, .4))
 
 		span
@@ -506,7 +507,7 @@ button, input, select
 	background: #f3f3f3
 
 	&__top
-		padding: 56px 0 45px
+		padding: 54px 0 45px
 		display: flex
 		justify-content: space-between
 
@@ -524,6 +525,26 @@ button, input, select
 			font-size: 14px
 			line-height: lh(22, 14)
 			margin-bottom: 17px
+			letter-spacing: .04em
+
+.footer-menu
+
+	&__link
+		text-decoration: none
+		color: #000
+		border-bottom: none
+		font-size: 13px
+		border-bottom: 1px solid transparent
+		letter-spacing: .06em
+		transition: border-color .3s ease
+
+		&:hover, &:focus, &.active
+			border-color: $main-color
+
+	li
+
+		&:not(:first-child)
+			margin: 5px 0 0
 
 .feedback
 	display: flex

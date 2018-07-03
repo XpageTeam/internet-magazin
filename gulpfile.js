@@ -68,7 +68,7 @@ gulp.task("postcss", () =>
 				loadPaths: ["app/img/"]
 			}),
 			require("postcss-short"),
-			require("postcss-px2rem")({remUnit: 16}),
+			// require("postcss-px2rem")({remUnit: 16}),
 			// require("cssnano")
 		])).on("error", $.notify.onError())
 		.pipe($.if(g_if, sourcemaps.write(".")))
